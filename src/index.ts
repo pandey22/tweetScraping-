@@ -1,18 +1,16 @@
-interface Tweet{
-    contents: string;
-    id : string
+require("dotenv").config();
+import { getTweets } from "./get-Tweets";
 
-}
-
-async function main(userName:String) {
-    const newTweets:Tweet[] = await getTweets(userName);
-    for(tweet of newTweets)
-    {
+async function main(userName:string) {
+    const newTweets = await getTweets(userName);
+    console.log(newTweets);
+    // for(tweet of newTweets)
+    // {
         const tokenAddress = await getTokenFromLLM(tweet.contents);
-        if(tokenAddress){
+    //     if(tokenAddress){
 
-        }
-    }
+    //     }
+    // }
     
 }
-main();
+main("kshitij_peace");
